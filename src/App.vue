@@ -1,85 +1,67 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <div class="container d-flex flex-column align-items-center">
+    <h1 class="my-3 fs-3 text-center">2024 Vue 前端新手營 - Composition API - 第二週</h1>
+    
+    <div class="d-flex flex-column rounded from-card align-items-center">
+      <h3 class="text-center p-2 rounded mt-2">註冊</h3>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <div class="mb-3 w-75">
+        <label for="emailInput" class="form-label text-white">電子信箱</label>
+        <input type="email" class="form-control" id="emailInput" placeholder="name@gmail.com">
+      </div>
+      <div class="mb-3 w-75">
+        <label for="passwordInput" class="form-label text-white">密碼</label>
+        <input type="password" class="form-control" id="passwordInput" placeholder="請輸入6位數以上密碼">
+      </div>
+      <div class="mb-3 w-75">
+        <label for="nicknameInput" class="form-label text-white">暱稱</label>
+        <input type="text" class="form-control" id="nicknameInput" placeholder="請輸入暱稱">
+      </div>
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+      <button type="button" class="mb-4 mt-3 border-0 w-75 submit-button">註冊</button>
+    
     </div>
-  </header>
 
-  <RouterView />
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+<style lang="scss">
+body {
+  background-color: #cbe9e9;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+h3 {
+  // background-color: #7ca8a8;
+  color: white;
+  // width: 500px;
 }
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+.from-card {
+  width: 500px;
+  background-color: #7ca8a8;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
+.submit-button {
+  background-color: #327777; 
+  border: 1px soild #327777;
+  color: #fff;
+  transition: background-color 0.3s;
+  border-radius: 4px;
+  padding: 6px 0;
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+  &:hover {
+    background-color: #285f5f;
   }
 
-  .logo {
-    margin: 0 2rem 0 0;
+  &:active {
+    background-color: #1e4d4d;
   }
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
 }
+
+
 </style>
